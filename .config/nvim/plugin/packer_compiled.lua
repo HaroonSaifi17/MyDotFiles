@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["DAPInstall.nvim"] = {
+    loaded = true,
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
+    url = "https://github.com/ravenxrz/DAPInstall.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -159,6 +164,21 @@ _G.packer_plugins = {
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -224,10 +244,10 @@ _G.packer_plugins = {
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
-  ["which-key.nvim"] = {
+  ["vim-illuminate"] = {
     loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-    url = "https://github.com/folke/which-key.nvim"
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   }
 }
 

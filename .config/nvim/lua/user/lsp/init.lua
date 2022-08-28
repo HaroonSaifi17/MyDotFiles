@@ -1,5 +1,8 @@
- require('user.lsp.cssls')
- require('user.lsp.html')
- require('user.lsp.tsserver')
- require('user.lsp.angularls')
- require('user.lsp.null-ls')
+local status_ok, _ = pcall(require, "lspconfig")
+if not status_ok then
+  return
+end
+
+require "user.lsp.lsp-installer"
+require("user.lsp.handlers").setup()
+require "user.lsp.null-ls"
