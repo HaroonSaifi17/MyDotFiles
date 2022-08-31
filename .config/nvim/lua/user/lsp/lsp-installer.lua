@@ -9,7 +9,9 @@ local servers = {
   "tsserver",
   "bashls",
   "jsonls",
-  "yamlls",
+  "angularls",
+  "emmet_ls",
+  "sumneko_lua"
 }
 
 lsp_installer.setup()
