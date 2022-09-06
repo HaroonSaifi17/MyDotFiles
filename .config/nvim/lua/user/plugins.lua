@@ -100,8 +100,7 @@ return packer.startup(function(use)
   -- Put this at the end after all plugins
 
   use('MunifTanjim/prettier.nvim')
-
-
+  use ('norcalli/nvim-colorizer.lua')
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
