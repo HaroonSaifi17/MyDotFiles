@@ -4,22 +4,27 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = {"css","javascript","typescript","html","json","scss","lua"}, -- one of "all" or a list of languages
-	ignore_install = { "" }, -- List of parsers to ignore installing
-	highlight = {
-		enable = true, -- false will disable the whole extension
-		disable = {}, -- list of language that will be disabled
-	},
-	autopairs = {
-		enable = true,
-	},
-	indent = { enable = true, disable = { "python", "css" } },
+	ensure_installed = {"css","javascript","typescript","html","json","scss","lua"},
+sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+  ignore_install = { "" }, -- List of parsers to ignore installing
+  matchup = {
+    enable = true, -- mandatory, false will disable the whole extension
+    disable_virtual_text = true,
+  },
+  highlight = {
+    enable = true, -- false will disable the whole extension
+  },
+  autopairs = {
+    enable = true,
+  },
+  indent = { enable = true, disable = { "css" } },
+  autotag = {
+    enable = true,
+    disable = { "xml", "markdown" },
+  },
   rainbow = {
     enable = true,
-    disable = { "html" }, -- list of languages you want to disable the plugin for
-    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-    max_file_lines = nil, -- Do not enable for files with more than n lines, int
-    -- colors = {}, -- table of hex strings
-    -- termcolors = {} -- table of colour name strings
+    disable = { "html" },
   }
 })
+vim.cmd([[hi rainbowcol1 guifg=#ff0000]])
