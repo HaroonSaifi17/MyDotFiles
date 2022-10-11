@@ -101,7 +101,11 @@ return packer.startup(function(use)
 
   use { "MunifTanjim/prettier.nvim" }
   use { "norcalli/nvim-colorizer.lua" }
-
+  use { "karb94/neoscroll.nvim" }
+  use {"iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        ft = "markdown",
+      }
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

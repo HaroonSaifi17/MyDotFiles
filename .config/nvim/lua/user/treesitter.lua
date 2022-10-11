@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = {"http","css","javascript","typescript","html","json","scss","lua"},
+	ensure_installed = {"http","css","javascript","typescript","html","json","scss","lua","cpp","java"},
 sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
   matchup = {

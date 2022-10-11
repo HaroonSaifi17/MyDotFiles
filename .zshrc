@@ -13,7 +13,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k" 
 
-plugins=(git)
+plugins=(git jsontools)
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -23,7 +23,7 @@ source $ZSH/oh-my-zsh.sh
 alias nv="nvim"
 alias code="nvim"
 alias vim="nvim"
-clear
+# clear
 
 
 
