@@ -79,6 +79,7 @@ return packer.startup(function(use)
   use {"williamboman/mason-lspconfig.nvim"}
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
   use { "RRethy/vim-illuminate" }
+  use { "lvimuser/lsp-inlayhints.nvim" }
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim" }
@@ -106,6 +107,9 @@ return packer.startup(function(use)
         run = "cd app && npm install",
         ft = "markdown",
       }
+  use { "tzachar/cmp-tabnine",
+    run = "./install.sh" 
+  }
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
