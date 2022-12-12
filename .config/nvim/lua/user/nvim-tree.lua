@@ -10,6 +10,11 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
+
 nvim_tree.setup {
   update_focused_file = {
     enable = true,
@@ -22,8 +27,8 @@ nvim_tree.setup {
         default = "",
         symlink = "",
         folder = {
-          arrow_open = "",
-          arrow_closed = "",
+          arrow_closed = "", -- arrow when folder is closed
+					arrow_open = "",
           default = "",
           open = "",
           empty = "",
