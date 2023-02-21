@@ -42,10 +42,10 @@
   "exclude_file_masks": null,
   "inline_suggestions_mode": null,
   "use_specialized_model_if_available": null,
-  "empty_line_suggestions": null,
   "snippets_enabled_v2": null,
   "inline_suggestions_mode_clients": null,
-  "tabnine_hub_port": 5555,
+  "tabnine_hub_port": 1123,
   "manually_selected_model": null,
-  "hybrid_rendering_mode": null
+  "hybrid_rendering_mode": null,
+  "force_local_hub": false
 }
