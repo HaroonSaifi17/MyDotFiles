@@ -17,7 +17,7 @@ local servers = {
   "jsonls",
   "angularls",
   "emmet_ls",
-  "sumneko_lua"
+  "tailwindcss"
 }
 
 local settings = {
