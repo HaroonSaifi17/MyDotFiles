@@ -47,9 +47,11 @@ function M.config()
   local icons = require "user.icons"
 
   local servers = {
+    "lua_ls",
     "cssls",
     "html",
     -- "tsserver",
+    "astro",
     "pyright",
     "bashls",
     "jsonls",
@@ -58,7 +60,8 @@ function M.config()
     "tailwindcss",
     -- "eslint",
     "prismals",
-    "emmet_ls"
+    "angularls",
+    "emmet_ls",
   }
 
   local default_diagnostic_config = {
@@ -104,6 +107,10 @@ function M.config()
     local require_ok, settings = pcall(require, "user.lspsettings." .. server)
     if require_ok then
       opts = vim.tbl_deep_extend("force", settings, opts)
+    end
+
+    if server == "lua_ls" then
+      require("neodev").setup {}
     end
 
     lspconfig[server].setup(opts)

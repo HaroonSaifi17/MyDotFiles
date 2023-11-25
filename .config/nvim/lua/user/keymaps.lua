@@ -22,6 +22,8 @@ keymap("n", "#", "#zz", opts)
 keymap("n", "g*", "g*zz", opts)
 keymap("n", "g#", "g#zz", opts)
 
+keymap("i", "jk", "<ESC>", opts)
+
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -36,6 +38,10 @@ vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
 vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
 
 -- more good
-keymap("n", "<s-m>", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
-keymap({"n", "o", "x"}, "<s-h>", "^", opts)
-keymap({"n", "o", "x"}, "<s-l>", "g_", opts)
+keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
+keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
+
+-- tailwind bearable to work with
+keymap({ "n", "x" }, "j", "gj", opts)
+keymap({ "n", "x" }, "k", "gk", opts)
+keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
