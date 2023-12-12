@@ -18,8 +18,7 @@ M.servers = {
   "yamlls",
   "marksman",
   "tailwindcss",
-  "angularls",
-  "emmet_ls",
+  "angular_ls"
 }
 
 function M.config()
