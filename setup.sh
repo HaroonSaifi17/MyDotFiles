@@ -17,7 +17,7 @@ if [[ $choice =~ ^[Yy]$ ]]; then
     git config --global user.email "haroonsaifi2001@gmail.com"
 
     # Install Oh My Zsh
-    sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
     # Install Powerlevel10k theme for Oh My Zsh
     cd ~/.oh-my-zsh/custom/themes/
