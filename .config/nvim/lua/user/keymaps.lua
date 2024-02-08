@@ -49,4 +49,4 @@ keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)
 
--- vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew | terminal<CR>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew | terminal<CR>', {noremap = true, silent = true}

@@ -23,7 +23,7 @@ local M = {
 }
 function M.config()
   require("nvim-treesitter.configs").setup {
-    ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python","html","css","javascript","typescript"}, -- put the language you want in this array
+    ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python","html","css","scss","javascript","typescript","json" }, -- put the language you want in this array
     ignore_install = { "" },
     sync_install = false,
     highlight = {

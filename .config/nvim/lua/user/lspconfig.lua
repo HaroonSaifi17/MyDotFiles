@@ -21,7 +21,7 @@ end
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
-
+  
   if client.supports_method "textDocument/inlayHint" then
     vim.lsp.inlay_hint.enable(bufnr, true)
   end
@@ -56,7 +56,7 @@ function M.config()
   local icons = require "user.icons"
 
   local servers = {
-    "lua_ls",
+    -- "lua_ls",
     "cssls",
     "html",
     -- "tsserver",
@@ -68,9 +68,9 @@ function M.config()
     "marksman",
     "tailwindcss",
     "eslint",
-    "rust_analyzer",
-    "angular_ls"
-    -- "prismals",
+    "prismals",
+    "angularls",
+    "emmet_ls",
   }
 
   local default_diagnostic_config = {
