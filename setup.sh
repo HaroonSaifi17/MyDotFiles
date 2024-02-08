@@ -10,7 +10,7 @@ if [[ $choice =~ ^[Yy]$ ]]; then
     apt upgrade -y
     
     # Install necessary packages
-    apt install -y wget neovim openssh-client nodejs python3 ripgrep clang zsh
+    apt install -y neovim openssh nodejs-lts python3 ripgrep clang zsh
 
     # Set up git configuration
     git config --global user.name "Haroon Saifi"
