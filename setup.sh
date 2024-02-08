@@ -6,11 +6,11 @@ choice=${choice:-Y}
 
 if [[ $choice =~ ^[Yy]$ ]]; then
     # Update and upgrade packages
-    sudo apt update
-    sudo apt upgrade -y
+    apt update
+    apt upgrade -y
     
     # Install necessary packages
-    sudo apt install -y wget neovim openssh-client nodejs python3 ripgrep clang zsh
+    apt install -y wget neovim openssh-client nodejs python3 ripgrep clang zsh
 
     # Set up git configuration
     git config --global user.name "Haroon Saifi"
@@ -52,4 +52,3 @@ if [[ $choice =~ ^[Yy]$ ]]; then
 else
     echo "Setup aborted."
 fi
-
