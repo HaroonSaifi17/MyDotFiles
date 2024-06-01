@@ -48,6 +48,8 @@ if [[ $choice == [Yy]* ]]; then
     ln -sf "$current_dir/.tmux.conf" ~/.tmux.conf
     mkdir -p ~/.config
     ln -sf "$current_dir/nvim" ~/.config/nvim
+
+    git remote set-url origin git@github.com:HaroonSaifi17/MyDotFiles.git
     
     echo "Setup complete! Please restart your terminal."
 
