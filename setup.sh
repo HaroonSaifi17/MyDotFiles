@@ -7,9 +7,9 @@ if [[ $choice == [Yy]* ]]; then
     echo "Setting up the environment..."
 
     sudo pacman -Syu --noconfirm
-    sudo pacman -S --noconfirm --needed git neovim zsh curl wget unzip openssh ripgrep nodejs clang python
+    sudo pacman -S --noconfirm --needed git tmux neovim zsh curl wget unzip openssh ripgrep nodejs clang python rust tree file
 
-    sudo npm install -g pnpm eslint prettier typescript typescript-language-server diagnostic-languageserver eslint_d angular-language-server @angular/cli
+    sudo npm install -g eslint prettier typescript diagnostic-languageserver eslint_d angular-language-server @angular/cli vscode-langservers-extracted
 
     echo "Git configuration..."
     read -p "Enter your name: " UserName
@@ -45,6 +45,7 @@ if [[ $choice == [Yy]* ]]; then
     ln -sf "$current_dir/.p10k.zsh" ~/.p10k.zsh
     ln -sf "$current_dir/.zshenv" ~/.zshenv
     ln -sf "$current_dir/.zsh_history" ~/.zsh_history
+    ln -sf "$current_dir/.tmux.conf" ~/.tmux.conf
     mkdir -p ~/.config
     ln -sf "$current_dir/nvim" ~/.config/nvim
     
