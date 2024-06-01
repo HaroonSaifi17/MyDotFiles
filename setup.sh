@@ -8,7 +8,7 @@ if [[ $choice == [Yy]* ]]; then
 
     pkg update
     pkg upgrade -y 
-    pkg install -y pacman -S --noconfirm --needed git tmux neovim zsh curl wget unzip openssh ripgrep nodejs clang python rust tree file root-repo
+    pkg install -y tmux neovim zsh curl wget unzip openssh ripgrep nodejs clang python rust tree file root-repo
 
     npm install -g eslint prettier typescript diagnostic-languageserver eslint_d angular-language-server @angular/cli vscode-langservers-extracted
 

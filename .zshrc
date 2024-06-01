@@ -20,6 +20,7 @@ source $ZSH/oh-my-zsh.sh
 alias nv="nvim"
 alias code="nvim"
 alias vim="nvim"
+alias vi="nvim"
 # clear
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
