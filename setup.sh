@@ -7,7 +7,7 @@ if [[ $choice == [Yy]* ]]; then
     echo "Setting up the environment..."
 
     sudo pacman -Syu --noconfirm
-    sudo pacman -S --noconfirm --needed git tmux neovim zsh curl wget unzip openssh ripgrep nodejs clang python rust tree file
+    sudo pacman -S --noconfirm --needed git tmux neovim zsh curl wget unzip openssh ripgrep nodejs clang python rust tree file rust go python-black rust-analyzer
 
     sudo npm install -g eslint prettier typescript diagnostic-languageserver eslint_d angular-language-server @angular/cli vscode-langservers-extracted
 

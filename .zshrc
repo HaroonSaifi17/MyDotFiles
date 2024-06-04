@@ -7,6 +7,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 ZSH_THEME="powerlevel10k/powerlevel10k" 
 
@@ -21,7 +22,7 @@ alias nv="nvim"
 alias code="nvim"
 alias vim="nvim"
 alias vi="nvim" 
-clear
+# clear
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
