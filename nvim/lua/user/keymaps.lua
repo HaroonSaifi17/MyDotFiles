@@ -25,6 +25,8 @@ keymap("n", "g#", "g#zz", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+keymap("i", "jk", "<ESC>", opts)
+
 keymap("x", "p", [["_dP]])
 
 vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]]
