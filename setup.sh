@@ -100,7 +100,7 @@ setup_symlinks() {
     ln -sf "$current_dir/.zshenv" ~/.zshenv
     ln -sf "$current_dir/.zsh_history" ~/.zsh_history
     ln -sf "$current_dir/.tmux.conf" ~/.tmux.conf
-    ln -sf "$current_dir/knownhosts" ~/.ssh/known_hosts
+    ln -sf "$current_dir/known_hosts" ~/.ssh/known_hosts
     mkdir -p ~/.config
     ln -sf "$current_dir/nvim" ~/.config/nvim
     if [ "$1" == "termux" ]; then
