@@ -48,10 +48,16 @@ install_packages_termux() {
     pkg update && pkg upgrade -y
     pkg install -y $PACKAGES root-repo
     npm install -g $NPM_PACKAGES
-    if [ "$(basename $(pwd))" == "MyDotFiles" ]; then
+
+    if [ "$(basename $(pwd))" == "MyDotFiles"]; then
         git pull
+    elseif [ -d "$HOME/MyDotFiles" ]; then
+        cd "$HOME/MyDotFiles"
+        git pull
+        $current_dir = "$HOME/MyDotFiles"
     else
-        git clone https://github.com/HaroonSaifi17/MyDotFiles.git
+        git clone https://github.com/HaroonSaifi17/MyDotFiles.git ~/MyDotFiles
+        $current_dir = "$HOME/MyDotFiles"
 }
 
 # Function to configure Git
