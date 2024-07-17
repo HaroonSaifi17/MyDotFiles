@@ -2,7 +2,7 @@
 
 # Packages and NPM packages
 PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep nodejs clang python rust tree file git"
-NPM_PACKAGES="eslint prettier typescript diagnostic-languageserver eslint_d angular-language-server @angular/cli vscode-langservers-extracted"
+NPM_PACKAGES="eslint prettier typescript-language-server typescript eslint_d @angular/language-server @angular/cli vscode-langservers-extracted"
 ZSH_PLUGINS="zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search"
 current_dir=$(pwd)
 
