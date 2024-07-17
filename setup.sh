@@ -6,7 +6,6 @@ NPM_PACKAGES="eslint prettier typescript-language-server typescript eslint_d @an
 ZSH_PLUGINS="zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search"
 current_dir=$(pwd)
 
-
 # Function to check if a command exists
 command_exists() {
     command -v "$1" >/dev/null 2>&1
@@ -37,10 +36,15 @@ install_packages_linux() {
         exit 1
     fi
     sudo npm install -g $NPM_PACKAGES
-    if [ "$(basename $(pwd))" == "MyDotFiles" ]; then
+    if [ "$(basename $(pwd))" == "MyDotFiles"]; then
         git pull
+    elif [ -d "$HOME/MyDotFiles" ]; then
+        cd "$HOME/MyDotFiles"
+        git pull
+        current_dir="$HOME/MyDotFiles"
     else
-        git clone https://github.com/HaroonSaifi17/MyDotFiles.git
+        git clone https://github.com/HaroonSaifi17/MyDotFiles.git ~/MyDotFiles
+        current_dir="$HOME/MyDotFiles"
     fi
 }
 
@@ -55,10 +59,10 @@ install_packages_termux() {
     elif [ -d "$HOME/MyDotFiles" ]; then
         cd "$HOME/MyDotFiles"
         git pull
-        $current_dir = "$HOME/MyDotFiles"
+        current_dir="$HOME/MyDotFiles"
     else
         git clone https://github.com/HaroonSaifi17/MyDotFiles.git ~/MyDotFiles
-        $current_dir = "$HOME/MyDotFiles"
+        current_dir="$HOME/MyDotFiles"
     fi
 }
 
@@ -121,10 +125,12 @@ if [[ $choice == [Yy]* ]]; then
         1)
             echo "Setting up for Termux (Android)..."
             install_packages_termux
+            setup_symlinks "termux"
             ;;
         2)
             echo "Setting up for Linux..."
             install_packages_linux
+            setup_symlinks "linux"
             echo "require 'linux'" > "$current_dir/.config/nvim/init.lua" 
             echo "PATH=/home/haroon/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/win32yank-x64" > "$current_dir/.zshenv"
             ;;
@@ -136,7 +142,6 @@ if [[ $choice == [Yy]* ]]; then
 
     configure_git
     setup_zsh
-    setup_symlinks "${device_choice == 1 ? 'termux' : 'linux'}"
     setup_ssh
     
     git remote set-url origin git@github.com:HaroonSaifi17/MyDotFiles.git
@@ -145,4 +150,3 @@ if [[ $choice == [Yy]* ]]; then
 else
     echo "Exiting..."
 fi
-
