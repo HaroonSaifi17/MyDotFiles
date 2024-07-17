@@ -16,7 +16,7 @@ To get started, follow these steps:
 1. Run the following command in your terminal.
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/HaroonSaifi17/MyDotFiles/main/setup.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/HaroonSaifi17/MyDotFiles/master/setup.sh)"
 ```
 
 2. Restart your terminal.

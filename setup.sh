@@ -41,6 +41,7 @@ install_packages_linux() {
         git pull
     else
         git clone https://github.com/HaroonSaifi17/MyDotFiles.git
+    fi
 }
 
 # Function to install packages on Termux (Android)
@@ -51,13 +52,14 @@ install_packages_termux() {
 
     if [ "$(basename $(pwd))" == "MyDotFiles"]; then
         git pull
-    elseif [ -d "$HOME/MyDotFiles" ]; then
+    elif [ -d "$HOME/MyDotFiles" ]; then
         cd "$HOME/MyDotFiles"
         git pull
         $current_dir = "$HOME/MyDotFiles"
     else
         git clone https://github.com/HaroonSaifi17/MyDotFiles.git ~/MyDotFiles
         $current_dir = "$HOME/MyDotFiles"
+    fi
 }
 
 # Function to configure Git
