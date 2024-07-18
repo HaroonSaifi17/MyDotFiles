@@ -68,7 +68,7 @@ install_packages_termux() {
 
 # Function to configure Git
 configure_git() {
-    read -p "Enter your name: " UserName
+    read -p "Enter your github Username: " UserName
     git config --global user.name "$UserName"
     read -p "Enter your email: " UserEmail
     git config --global user.email "$UserEmail"
