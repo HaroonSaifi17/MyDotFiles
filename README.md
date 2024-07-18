@@ -1,12 +1,15 @@
 # My Shell and Neovim Config 
 
+![Screenshot](screenshots/pic1.jpg)
+![Screenshot](screenshots/pic2.jpg)
+
 ## Description 
 This script automates the setup of essential tools, configurations, and dotfiles for Linux and Termux environments.
 
 It installs the following tools and configurations:
-1. Ohm-My-Zsh
-2. Neovim 
-3. Git Configuration
+1. Ohm-My-Zsh (With Powerlevel10k Theme)
+2. Neovim (For Web Development)
+3. Git Configuration (With SSH)
 
 
 ## Installation
@@ -32,7 +35,7 @@ git clone https://github.com/haroonsaifi17/MyDotFiles && cd MyDotFiles
 2. setup
 
 ```bash
-chmod 777 ./setup.sh && ./setup.sh
+chmod +x ./setup.sh && ./setup.sh
 ```
 ## License 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

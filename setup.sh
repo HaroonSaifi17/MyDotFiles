@@ -68,7 +68,7 @@ install_packages_termux() {
 
 # Function to configure Git
 configure_git() {
-    read -p "Enter your github Username: " UserName
+    read -p "Enter your name: " UserName
     git config --global user.name "$UserName"
     read -p "Enter your email: " UserEmail
     git config --global user.email "$UserEmail"
@@ -125,12 +125,10 @@ if [[ $choice == [Yy]* ]]; then
         1)
             echo "Setting up for Termux (Android)..."
             install_packages_termux
-            setup_symlinks "termux"
             ;;
         2)
             echo "Setting up for Linux..."
             install_packages_linux
-            setup_symlinks "linux"
             echo "require 'linux'" > "$current_dir/.config/nvim/init.lua" 
             echo "PATH=/home/haroon/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/win32yank-x64" > "$current_dir/.zshenv"
             ;;
@@ -142,6 +140,14 @@ if [[ $choice == [Yy]* ]]; then
 
     configure_git
     setup_zsh
+    case "$device_choice" in
+        1)
+            setup_symlinks "termux"
+            ;;
+        2)
+            setup_symlinks "linux"
+            ;;
+    esac
     setup_ssh
     
     git remote set-url origin git@github.com:HaroonSaifi17/MyDotFiles.git
