@@ -4,7 +4,7 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-export PATH=/data/data/com.termux/files/usr/local/bin:/data/data/com.termux/files/usr/local/sbin:/data/data/com.termux/files/usr/sbin:/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/sbin:/data/data/com.termux/files/bin
+export PATH=/home/haroon/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/win32yank-x64
 
 
 ZSH_THEME="powerlevel10k/powerlevel10k" 

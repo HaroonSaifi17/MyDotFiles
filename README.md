@@ -1,10 +1,7 @@
 # My Shell and Neovim Config 
 
-![Screenshot](screenshots/pic1.jpg)
-![Screenshot](screenshots/pic2.jpg)
-
 ## Description 
-This script automates the setup of essential tools, configurations, and dotfiles for Linux and Termux environments.
+This script automates the setup of essential tools, configurations, and dotfiles for Arch WSL.
 
 It installs the following tools and configurations:
 1. Ohm-My-Zsh (With Powerlevel10k Theme)
@@ -19,7 +16,7 @@ To get started, follow these steps:
 1. Run the following command in your terminal.
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/HaroonSaifi17/MyDotFiles/master/setup.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/HaroonSaifi17/MyDotFiles/laptop/setup.sh)"
 ```
 
 2. Restart your terminal.
@@ -30,6 +27,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/HaroonSaifi17/MyDotFiles
 
 ```bash
 git clone https://github.com/haroonsaifi17/MyDotFiles && cd MyDotFiles
+git checkout laptop
 ```
 
 2. setup
