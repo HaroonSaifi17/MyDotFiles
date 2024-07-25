@@ -1,7 +1,7 @@
 local M = {
   -- "pmizio/typescript-tools.nvim",
   "notomo/typescript-tools.nvim",
-  branch = "fix-deprecated",
+  branch = "master",
   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 }
 
@@ -29,11 +29,11 @@ function M.config()
       -- tsserver_format_options = {},
 
       tsserver_file_preferences = {
-        includeInlayParameterNameHints = "literals", -- "none" | "literals" | "all";
-        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        includeInlayParameterNameHints = "all", -- "none" | "literals" | "all";
+        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
         includeInlayFunctionParameterTypeHints = true,
-        includeInlayVariableTypeHints = false,
-        includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+        includeInlayVariableTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = true,
         includeInlayPropertyDeclarationTypeHints = true,
         includeInlayFunctionLikeReturnTypeHints = true,
         includeInlayEnumMemberValueHints = true,

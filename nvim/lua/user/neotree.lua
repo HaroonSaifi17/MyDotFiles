@@ -4,15 +4,20 @@ local M = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
-    "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
 }
 
 function M.config()
   local wk = require "which-key"
-  wk.register {
-    ["<leader>e"] = { "<cmd>Neotree toggle<CR>", "Explorer" },
-    -- ["<leader>b"] = { "<cmd>Neotree toggle source=buffers position=left<CR>", "Buffers" },
+
+  wk.add {
+    {
+      "<leader>e",
+      "<cmd>Neotree toggle<CR>",
+      desc = "Explorer",
+      hidden = true,
+    },
   }
 
   local icons = require "user.icons"
@@ -107,7 +112,7 @@ function M.config()
       mappings = {
         ["l"] = "open",
         ["h"] = "close_node",
-        ["p"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+        -- ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
         -- Read `# Preview Mode` for more information
         ["s"] = "open_vsplit",
         ["t"] = "open_tabnew",
@@ -140,6 +145,11 @@ function M.config()
       },
     },
     filesystem = {
+      bind_to_cwd = true,
+      cwd_target = {
+        sidebar = "tab", -- sidebar is when position = left or right
+        current = "window", -- current is when position = current
+      },
       filtered_items = {
         visible = true, -- when true, they will just be displayed differently than normal items
         hide_dotfiles = false,

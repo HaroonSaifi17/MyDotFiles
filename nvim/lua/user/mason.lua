@@ -18,15 +18,14 @@ M.execs = {
   "yamlls",
   "marksman",
   "tailwindcss",
-  "rust_analyzer",
   "eslint",
   "angularls",
 }
 
 function M.config()
   local wk = require "which-key"
-  wk.register {
-    ["<leader>lI"] = { "<cmd>Mason<cr>", "Mason Info" },
+  wk.add {
+    { "<leader>lI", "<cmd>Mason<cr>", desc = "Mason Info" },
   }
 
   require("mason").setup {
