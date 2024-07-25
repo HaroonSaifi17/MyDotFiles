@@ -4,7 +4,9 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-export PATH=/home/haroon/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/win32yank-x64
+export PATH=/home/haroon/bin:/mnt/c/win32yank-x64:$PATH
+export EDITOR=nvim
+export VISUAL=nvim
 
 
 ZSH_THEME="powerlevel10k/powerlevel10k" 
