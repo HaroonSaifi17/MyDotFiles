@@ -35,6 +35,7 @@ spec "user.project"
 spec "user.toggleterm"
 spec "user.bufdelete"
 spec "user.luarocks"
+spec "user.markdown-preview"
 -- spec "user.image"
 -- Extras
 spec "user.extras.notify"
