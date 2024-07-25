@@ -53,35 +53,36 @@ setup_symlinks() {
     ln -sf "$current_dir/.tmux.conf" ~/.tmux.conf
     ln -sf "$current_dir/known_hosts" ~/.ssh/known_hosts
     mkdir -p ~/.config
+    rm -rf ~/.config/nvim
     ln -sf "$current_dir/nvim" ~/.config/nvim
 }
 
 read -p "Do you want to proceed with the setup? (y/n): " choice
 choice=${choice:-y}
 
-if [[ $choice == [Yy]* ]]; then
-    echo "Would you like to install packages? (y/n): " choice
+    if [[ $choice == [Yy]* ]]; then
+    read -p "Would you like to install packages? (y/n): " choice
     choice=${choice:-y}
     if [[ $choice == [Yy]* ]]; then
         install_packages
-    fi 
-    echo "Would you like to configure git? (y/n): " choice
+    fi
+    read -p "Would you like to configure git? (y/n): " choice
     choice=${choice:-y}
     if [[ $choice == [Yy]* ]]; then
         configure_git
-    fi 
-    echo "Would you like to setup zsh? (y/n): " choice
+    fi
+    read -p "Would you like to setup zsh? (y/n): " choice
     choice=${choice:-y}
     if [[ $choice == [Yy]* ]]; then
         setup_zsh
-    fi 
-    echo "Would you like to setup symlinks? (y/n): " choice 
+    fi
+    read -p "Would you like to setup symlinks? (y/n): " choice
     choice=${choice:-y}
     if [[ $choice == [Yy]* ]]; then
         setup_symlinks
-    fi 
-    echo "Would you like to setup ssh? (y/n): " choice 
-    choice=${choice:-y} 
+    fi
+    read -p "Would you like to setup ssh? (y/n): " choice
+    choice=${choice:-y}
     if [[ $choice == [Yy]* ]]; then
         setup_ssh
     fi
