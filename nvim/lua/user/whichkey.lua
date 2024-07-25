@@ -39,6 +39,9 @@ function M.config()
       buftypes = {},
       filetypes = { "TelescopePrompt" },
     },
+    defer = function(ctx)
+        return ctx.mode == "v" or ctx.mode == "<C-V>"
+      end,
   }
 
   local wk = require "which-key"
