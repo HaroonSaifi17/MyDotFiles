@@ -7,26 +7,24 @@ local M = {
 }
 
 M.execs = {
-  -- "lua_ls",
   "cssls",
   "html",
   "tsserver",
-  -- "astro",
+  "astro",
   "pyright",
   "bashls",
   "jsonls",
   "yamlls",
   "marksman",
   "tailwindcss",
-  -- "rust_analyzer",
   "eslint",
-  "angularls"
+  "angularls",
 }
 
 function M.config()
   local wk = require "which-key"
-  wk.register {
-    ["<leader>lI"] = { "<cmd>Mason<cr>", "Mason Info" },
+  wk.add {
+    { "<leader>lI", "<cmd>Mason<cr>", desc = "Mason Info" },
   }
 
   require("mason").setup {

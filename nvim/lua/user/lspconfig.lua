@@ -1,11 +1,11 @@
 local M = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
-  dependencies = {
-    {
-      "folke/neodev.nvim",
-    },
-  },
+  -- dependencies = {
+  --   {
+  --     "folke/neodev.nvim",
+  --   },
+  -- },
 }
 
 local function lsp_keymaps(bufnr)
@@ -13,7 +13,7 @@ local function lsp_keymaps(bufnr)
   local keymap = vim.api.nvim_buf_set_keymap
   keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  -- keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  keymap(bufnr, "n", "<CR>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   vim.keymap.set("n", "K", function()
     local winid = require("ufo").peekFoldedLinesUnderCursor()
     if not winid then
@@ -62,25 +62,53 @@ end
 
 function M.config()
   local wk = require "which-key"
-  wk.register {
-    ["<leader>la"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    ["<leader>lf"] = {
+  wk.add {
+    { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+    {
+      "<leader>lf",
       "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
-      "Format",
+      desc = "Format",
     },
-    ["<leader>li"] = { "<cmd>LspInfo<cr>", "Info" },
-    ["<leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
-    ["<leader>lh"] = { "<cmd>lua require('user.lspconfig').toggle_inlay_hints()<cr>", "Hints" },
-    ["<leader>lk"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
-    ["<leader>ll"] = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    ["<leader>lq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-    ["<leader>lr"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-  }
-
-  wk.register {
-    ["<leader>la"] = {
-      name = "LSP",
-      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action", mode = "v" },
+    {
+      "<leader>li",
+      "<cmd>LspInfo<cr>",
+      desc = "Info",
+    },
+    {
+      "<leader>lj",
+      "<cmd>lua vim.diagnostic.goto_next()<cr>",
+      desc = "Next Diagnostic",
+    },
+    {
+      "<leader>lh",
+      "<cmd>lua require('user.lspconfig').toggle_inlay_hints()<cr>",
+      desc = "Hints",
+    },
+    {
+      "<leader>lk",
+      "<cmd>lua vim.diagnostic.goto_prev()<cr>",
+      desc = "Prev Diagnostic",
+    },
+    {
+      "<leader>ll",
+      "<cmd>lua vim.lsp.codelens.run()<cr>",
+      desc = "CodeLens Action",
+    },
+    {
+      "<leader>lq",
+      "<cmd>lua vim.diagnostic.setloclist()<cr>",
+      desc = "Quickfix",
+    },
+    {
+      "<leader>lr",
+      "<cmd>lua vim.lsp.buf.rename()<cr>",
+      desc = "Rename",
+    },
+    {
+      "<leader>la",
+      "<cmd>lua vim.lsp.buf.code_action()<cr>",
+      desc = "Code Action",
+      mode = { "v" },
     },
   }
 
@@ -92,7 +120,7 @@ function M.config()
     "cssls",
     "html",
     -- "tsserver",
-    -- "astro",
+    "astro",
     "pyright",
     -- "basedpyright",
     "bashls",
@@ -102,10 +130,11 @@ function M.config()
     "marksman",
     "tailwindcss",
     "eslint",
-    -- "taplo",
+    "taplo",
+    "gopls",
+    "templ",
     "angularls",
-    "emmet_ls",
-    "gopls"
+    -- "nginx-language-server",
     -- "rust_analyzer",
   }
 
@@ -118,7 +147,7 @@ function M.config()
         [vim.diagnostic.severity.INFO] = icons.diagnostics.Information,
       },
     },
-    virtual_text = false,
+    virtual_text = true,
     update_in_insert = false,
     underline = true,
     severity_sort = true,
@@ -146,11 +175,11 @@ function M.config()
       opts = vim.tbl_deep_extend("force", settings, opts)
     end
 
-    if server == "lua_ls" then
-      require("neodev").setup {}
-    end
-
     lspconfig[server].setup(opts)
+
+    if server == "nginx-language-server" then
+      require("lspconfig").nginx_language_server.setup(opts)
+    end
   end
 end
 
