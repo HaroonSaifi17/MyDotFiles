@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep nodejs-lts clang python rust tree file git fastfetch"
+PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep nodejs-lts clang python rust tree file git fastfetch rust-analyzer"
 NPM_PACKAGES="eslint prettier typescript-language-server typescript eslint_d emmet-ls @angular/language-server @angular/cli vscode-langservers-extracted"
 ZSH_PLUGINS="zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search"
 current_dir=$(pwd)
@@ -9,6 +9,18 @@ install_packages_termux() {
     pkg update && pkg upgrade -y
     pkg install -y $PACKAGES
     npm install -g $NPM_PACKAGES
+
+    if [ "$(basename $(pwd))" == "MyDotFiles" ]; then
+        git pull
+    elif [ -d "$HOME/MyDotFiles" ]; then
+        cd "$HOME/MyDotFiles"
+        git pull
+        current_dir="$HOME/MyDotFiles"
+    else
+        git clone https://github.com/HaroonSaifi17/MyDotFiles.git ~/MyDotFiles
+        current_dir="$HOME/MyDotFiles"
+    fi
+
     chmod +x "$current_dir/termux-exec_2.0.0_aarch64.deb"
     pkg install -y "$current_dir/termux-exec_2.0.0_aarch64.deb"
 }
@@ -27,6 +39,7 @@ setup_zsh() {
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-history-substring-search
+    chsh -s zsh
 }
 
 setup_ssh() {
@@ -38,17 +51,6 @@ setup_ssh() {
 }
 
 setup_symlinks() {
-    if [ "$(basename $(pwd))" == "MyDotFiles" ]; then
-        git pull
-    elif [ -d "$HOME/MyDotFiles" ]; then
-        cd "$HOME/MyDotFiles"
-        git pull
-        current_dir="$HOME/MyDotFiles"
-    else
-        git clone https://github.com/HaroonSaifi17/MyDotFiles.git ~/MyDotFiles
-        current_dir="$HOME/MyDotFiles"
-    fi
-
     ln -sf "$current_dir/.zshrc" ~/.zshrc
     ln -sf "$current_dir/.p10k.zsh" ~/.p10k.zsh
     ln -sf "$current_dir/.zsh_history" ~/.zsh_history
