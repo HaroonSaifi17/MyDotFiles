@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep nodejs-lts clang python rust tree file git fastfetch rust-analyzer"
+PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep nodejs-lts clang python rust tree file git fastfetch rust-analyzer golang lua-language-server htop gh"
 NPM_PACKAGES="eslint prettier typescript-language-server typescript eslint_d emmet-ls @angular/language-server @angular/cli vscode-langservers-extracted"
 ZSH_PLUGINS="zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search"
 current_dir=$(pwd)

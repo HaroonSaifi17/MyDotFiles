@@ -116,7 +116,7 @@ function M.config()
   local icons = require "user.icons"
 
   local servers = {
-    -- "lua_ls",
+    "lua_ls",
     "cssls",
     "html",
     -- "tsserver",
@@ -134,6 +134,7 @@ function M.config()
     "gopls",
     "templ",
     "angularls",
+    "emmet_ls",
     -- "nginx-language-server",
     -- "rust_analyzer",
   }
