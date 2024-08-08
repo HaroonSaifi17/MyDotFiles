@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep nodejs clang python rust tree file git fastfetch go python-black rust-analyzer"
+PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep nodejs clang python rust tree file git fastfetch go python-black rust-analyzer htop gh"
 NPM_PACKAGES="eslint prettier typescript-language-server typescript eslint_d emmet-ls @angular/language-server @angular/cli vscode-langservers-extracted"
 ZSH_PLUGINS="zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search"
 current_dir=$(pwd)
@@ -25,6 +25,7 @@ setup_zsh() {
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-history-substring-search
+    chsh -s $(which zsh)
 }
 
 setup_ssh() {

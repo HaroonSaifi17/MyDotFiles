@@ -134,6 +134,7 @@ function M.config()
     "gopls",
     "templ",
     "angularls",
+    "emmet_ls",
     -- "nginx-language-server",
     -- "rust_analyzer",
   }

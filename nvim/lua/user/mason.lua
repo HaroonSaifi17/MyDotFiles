@@ -20,6 +20,7 @@ M.execs = {
   "tailwindcss",
   "eslint",
   "angularls",
+  "emmet_ls",
 }
 
 function M.config()

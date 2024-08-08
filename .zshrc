@@ -22,6 +22,5 @@ alias nv="nvim"
 alias code="nvim"
 alias vim="nvim"
 alias vi="nvim"
-clear
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
