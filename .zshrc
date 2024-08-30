@@ -4,7 +4,7 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-export PATH=/home/haroon/bin:/mnt/c/win32yank-x64:$PATH
+export PATH="/home/haroon/bin:/mnt/c/win32yank-x64:/mnt/c/Program Files/Google/Chrome/Application:$PATH"
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -24,3 +24,11 @@ alias vim="nvim"
 alias vi="nvim"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

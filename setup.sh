@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep nodejs clang python rust tree file git fastfetch go python-black rust-analyzer htop gh"
+PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep nvm clang python rust tree file git fastfetch go python-black rust-analyzer htop gh stylua lua-language-server "
 NPM_PACKAGES="eslint prettier typescript-language-server typescript eslint_d emmet-ls @angular/language-server @angular/cli vscode-langservers-extracted"
 ZSH_PLUGINS="zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search"
 current_dir=$(pwd)
@@ -8,6 +8,8 @@ current_dir=$(pwd)
 install_packages() {
     sudo pacman -Syu --noconfirm
     sudo pacman -S --noconfirm --needed $PACKAGES
+    nvm install --lts
+    nvm use --lts
     sudo npm install -g $NPM_PACKAGES
 }
 
