@@ -40,7 +40,7 @@ setup_ssh() {
 }
 
 setup_symlinks() {
-    if [ "$(basename $(pwd))" == "MyDotFiles"]; then
+    if [ "$(basename $(pwd))" == "MyDotFiles" ]; then
         git pull
     elif [ -d "$HOME/MyDotFiles" ]; then
         cd "$HOME/MyDotFiles"
@@ -48,6 +48,8 @@ setup_symlinks() {
         current_dir="$HOME/MyDotFiles"
     else
         git clone https://github.com/HaroonSaifi17/MyDotFiles.git ~/MyDotFiles
+         cd "$HOME/MyDotFiles"
+        git checkout laptop
         current_dir="$HOME/MyDotFiles"
     fi
 
@@ -80,16 +82,17 @@ choice=${choice:-y}
     if [[ $choice == [Yy]* ]]; then
         setup_zsh
     fi
+     read -p "Would you like to setup ssh? (y/n): " choice
+    choice=${choice:-y}
+    if [[ $choice == [Yy]* ]]; then
+        setup_ssh
+    fi
     read -p "Would you like to setup symlinks? (y/n): " choice
     choice=${choice:-y}
     if [[ $choice == [Yy]* ]]; then
         setup_symlinks
     fi
-    read -p "Would you like to setup ssh? (y/n): " choice
-    choice=${choice:-y}
-    if [[ $choice == [Yy]* ]]; then
-        setup_ssh
-    fi
+   
 
     git remote set-url origin git@github.com:HaroonSaifi17/MyDotFiles.git
 
