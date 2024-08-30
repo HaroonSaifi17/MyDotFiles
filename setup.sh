@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep clang python rust tree file git fastfetch go python-black rust-analyzer htop github-cli stylua lua-language-server "
+PACKAGES="tmux neovim zsh curl wget unzip openssh ripgrep clang python rust tree file git fastfetch go python-black rust-analyzer htop github-cli make stylua lua-language-server "
 NPM_PACKAGES="eslint prettier typescript-language-server typescript eslint_d emmet-ls @angular/language-server @angular/cli vscode-langservers-extracted"
 ZSH_PLUGINS="zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search"
 current_dir=$(pwd)
@@ -9,6 +9,7 @@ install_packages() {
     sudo pacman -Syu --noconfirm
     sudo pacman -S --noconfirm --needed $PACKAGES
     wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+    source ~/.nvm/nvm.sh
     nvm install --lts
     nvm use --lts
     sudo npm install -g $NPM_PACKAGES
