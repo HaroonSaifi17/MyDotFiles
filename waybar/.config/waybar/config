@@ -1,0 +1,30 @@
+{
+  "layer": "top",
+  "margin-bottom": 0,
+  "layer": "top",
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 0,
+  "include": [
+    "~/.config/waybar/waybar-quicklinks.json",
+    "~/.config/waybar/modules.json"
+  ],
+  "modules-left": [
+    "custom/appmenu",
+    "group/quicklinks",
+    "hyprland/window",
+    "custom/empty"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "bluetooth",
+    "battery",
+    "network",
+    "group/hardware",
+    "custom/exit",
+    "clock"
+  ]
+}

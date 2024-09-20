@@ -1,0 +1,34 @@
+{
+    "custom/quicklink1": {
+        "format": "",
+        "on-click": "chromium",
+        "tooltip-format": "Open Chromium"
+    }, 
+    "custom/quicklink2": {
+        "format": "",
+        "on-click": "firefox",
+        "tooltip-format": "Open Firefox"
+    },
+    "custom/quicklink3": {
+        "format": "",
+        "on-click": "nautilus",
+        "tooltip-format": "Open filemanager"
+    }, 
+    "custom/quicklink4": {
+        "format": "",
+        "on-click": "smile",
+        "tooltip-format": "Open emoji picker"
+    }, 
+    "custom/quicklinkempty": {
+    }, 
+    "group/quicklinks": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/quicklink1",
+            "custom/quicklink2",
+            "custom/quicklink3",
+            "custom/quicklink4",
+            "custom/quicklinkempty"
+        ]
+    }
+}
