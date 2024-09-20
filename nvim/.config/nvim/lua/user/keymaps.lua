@@ -50,5 +50,6 @@ keymap({ "n" }, "<s-l>", "<cmd>tabn<cr>", opts)
 
 vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
 
-keymap("n", "<leader>1", ":w<CR>:lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<CR>", opts)
+keymap("n", "<leader>1", ":w", opts)
+keymap("i", "jk", "<ESC>", opts)
 

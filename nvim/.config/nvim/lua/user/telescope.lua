@@ -169,7 +169,7 @@ function M.config()
         "--line-number",
         "--column",
         "--smart-case",
-        -- "--hidden",
+        "--hidden",
         "--glob=!.git/",
       },
 
@@ -192,6 +192,10 @@ function M.config()
     pickers = {
       live_grep = {
         theme = "dropdown",
+        file_ignore_patterns = { "node_modules", ".git", ".venv" },
+        additional_args = function(_)
+          return { "--hidden" }
+        end,
       },
 
       grep_string = {
@@ -202,6 +206,8 @@ function M.config()
         theme = "dropdown",
         previewer = false,
         path_display = filenameFirst,
+        file_ignore_patterns = { "node_modules", ".git", ".venv" },
+        hidden = true,
       },
 
       buffers = {

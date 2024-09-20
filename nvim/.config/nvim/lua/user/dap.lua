@@ -4,9 +4,14 @@ local M = {
   dependencies = {
     {
       "rcarriga/nvim-dap-ui",
-      "mfussenegger/nvim-dap-python",
+      "mxsdev/nvim-dap-vscode-js",
       "theHamsta/nvim-dap-virtual-text",
       "nvim-telescope/telescope-dap.nvim",
+      {
+        "microsoft/vscode-js-debug",
+        version = "1.x",
+        build = "npm i && npm run compile vsDebugServerBundle && mv dist out",
+      },
     },
   },
 }

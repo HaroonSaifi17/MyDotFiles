@@ -4,6 +4,10 @@ local M = {
 
 function M.config()
   local banned_messages = { "No information available" }
+  require("notify").setup({
+    background_colour = "#000000",
+  })
+
   vim.notify = function(msg, ...)
     for _, banned in ipairs(banned_messages) do
       if msg == banned then

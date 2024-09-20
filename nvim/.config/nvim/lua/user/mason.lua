@@ -7,6 +7,7 @@ local M = {
 }
 
 M.execs = {
+  "lua_ls",
   "cssls",
   "html",
   "tsserver",
@@ -19,6 +20,7 @@ M.execs = {
   "tailwindcss",
   "eslint",
   "angularls",
+  "emmet_ls",
 }
 
 function M.config()

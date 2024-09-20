@@ -1,0 +1,1 @@
+sudo pacman -Syu --noconfirm tmux neovim zsh curl wget unzip openssh ripgrep clang python rust tree file git fastfetch go python-black rust-analyzer htop github-cli make stylua lua-language-server
