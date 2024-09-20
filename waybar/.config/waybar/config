@@ -19,10 +19,10 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
+    "network",
     "pulseaudio",
     "bluetooth",
     "battery",
-    "network",
     "group/hardware",
     "custom/exit",
     "clock"

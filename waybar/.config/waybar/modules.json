@@ -116,8 +116,9 @@
 
   // Network
   "network": {
+    "interval": 1,
     "format": "{ifname}",
-    "format-wifi": "   {signalStrength}%",
+    "format-wifi": "   {bandwidthDownBits} / {bandwidthUpBits}",
     "format-ethernet": "  {ifname}",
     "format-disconnected": "Disconnected",
     "tooltip-format": " {ifname} via {gwaddri}",
