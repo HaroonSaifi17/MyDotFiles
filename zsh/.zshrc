@@ -6,6 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export EDITOR=nvim
 export VISUAL=nvim
+export BROWSER="firefox"
 
 
 ZSH_THEME="powerlevel10k/powerlevel10k" 

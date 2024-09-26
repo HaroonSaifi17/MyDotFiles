@@ -10,7 +10,7 @@ M.execs = {
   "lua_ls",
   "cssls",
   "html",
-  "tsserver",
+  -- "tsserver",
   "astro",
   "pyright",
   "bashls",
