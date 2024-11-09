@@ -7,7 +7,7 @@ local M = {
 }
 
 M.execs = {
-  "lua_ls",
+  "lua_ls", --termux
   "cssls",
   "html",
   -- "tsserver",

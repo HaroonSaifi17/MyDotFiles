@@ -53,6 +53,29 @@ ts() {
   cd "$current_dir"
 }
 
+as() {
+  tmux attach -t 0 || tmux new -s 0
+}
+
+home() {
+  sudo systemctl restart NetworkManager
+  sleep 2
+  nmcli connection up Home
+}
+
+buds() {
+  sudo systemctl start bluetooth
+  sleep 2
+  bluetoothctl connect 98:34:8C:DE:15:F8
+}
+
+
+jk() {
+  if [[ -n $TMUX ]]; then
+    tmux copy-mode
+  fi
+}
+
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -60,3 +83,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 source <(ng completion script)
+
+
+# pnpm
+export PNPM_HOME="/home/haroon/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+
+eval "$(zoxide init zsh)"

@@ -76,10 +76,12 @@ tooltip {
     opacity:0.8;
     padding:20px;
     margin:0px;
+    font-weight: normal;
 }
 
 tooltip label {
     color: @textcolor2;
+    font-weight: normal;
 }
 
 /* -----------------------------------------------------
@@ -174,7 +176,7 @@ window#waybar.empty #window {
 #custom-waybarthemes {
     margin-right: 16px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: normal;
     opacity: 0.8;
     color: @iconcolor;
 }
@@ -230,7 +232,7 @@ window#waybar.empty #window {
 #idle_inhibitor {
     margin-right: 15px;
     font-size: 22px;
-    font-weight: bold;
+    font-weight: normal;
     opacity: 0.8;
     color: @iconcolor;
 }
@@ -238,7 +240,7 @@ window#waybar.empty #window {
 #idle_inhibitor.activated {
     margin-right: 15px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: normal;
     opacity: 0.8;
     color: #dc2f2f;
 }
