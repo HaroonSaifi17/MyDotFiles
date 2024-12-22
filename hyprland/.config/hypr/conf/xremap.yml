@@ -1,0 +1,7 @@
+modmap:
+  - name: Global
+    remap:
+      KEY_CAPSLOCK:
+        held: KEY_LEFTCTRL
+        alone: KEY_ESC
+        alone_timeout_millis: 250
