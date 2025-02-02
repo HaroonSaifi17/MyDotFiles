@@ -21,6 +21,8 @@ function M.config()
       rgb_fn = true,
       hsl_fn = true,
       tailwind = "both",
+      css = true,
+      css_fn = true,
     },
     buftypes = {},
   }

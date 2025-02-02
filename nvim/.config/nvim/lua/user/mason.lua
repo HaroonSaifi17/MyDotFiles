@@ -18,7 +18,7 @@ M.execs = {
   "yamlls",
   "marksman",
   "tailwindcss",
-  "eslint",
+  -- "eslint",
   "angularls",
   "emmet_ls",
 }

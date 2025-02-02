@@ -48,7 +48,7 @@ function M.config()
     default_component_configs = {
       indent = {
         indent_size = 2,
-        padding = 1, -- extra padding on left hand side
+        padding = 2, -- extra padding on left hand side
         -- indent guides
         with_markers = true,
         indent_marker = "│",

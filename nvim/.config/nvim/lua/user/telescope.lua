@@ -10,7 +10,7 @@ function M.config()
 
   wk.add {
     {
-      "<leader>bb",
+      "<leader>b",
       "<cmd>Telescope buffers previewer=false<cr>",
       desc = "Find",
     },
