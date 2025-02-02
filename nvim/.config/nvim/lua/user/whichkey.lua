@@ -79,7 +79,7 @@ function M.config()
       },
     },
     {
-      "<leader>w",
+      "<leader>lw",
       "<cmd>lua vim.wo.wrap = not vim.wo.wrap<CR>",
       desc = "Wrap",
       hidden = true,

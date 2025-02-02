@@ -7,20 +7,22 @@ local M = {
 }
 
 M.execs = {
-  -- "lua_ls", --termux
-  "cssls",
-  "html",
-  -- "tsserver",
-  "astro",
-  "pyright",
-  "bashls",
-  "jsonls",
-  "yamlls",
+  "grammarly",
   "marksman",
-  "tailwindcss",
-  -- "eslint",
+  "bashls",
   "angularls",
+  "pyright",
+  "tailwindcss",
+  "cssls",
   "emmet_ls",
+  "eslint",
+  "graphql",
+  "html",
+  "jsonls",
+  "lua_ls",
+  "yamlls",
+  "rust_analyzer",
+  "eslint"
 }
 
 function M.config()

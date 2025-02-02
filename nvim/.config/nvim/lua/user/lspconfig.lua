@@ -119,25 +119,18 @@ function M.config()
     "lua_ls",
     "cssls",
     "html",
-    -- "tsserver",
-    "astro",
     "pyright",
-    -- "basedpyright",
     "bashls",
-    -- "lemminx",
     "jsonls",
     "yamlls",
     "marksman",
     "tailwindcss",
-    "eslint",
-    "taplo",
-    "gopls",
-    "templ",
     "angularls",
-    -- "emmet_ls",
-    "ltex",
-    -- "nginx-language-server",
+    "emmet_ls",
+    "eslint",
     -- "rust_analyzer",
+    "graphql",
+    "grammarly",
   }
 
   vim.diagnostic.config {
@@ -179,9 +172,6 @@ function M.config()
 
     lspconfig[server].setup(opts)
 
-    if server == "nginx-language-server" then
-      require("lspconfig").nginx_language_server.setup(opts)
-    end
   end
 end
 

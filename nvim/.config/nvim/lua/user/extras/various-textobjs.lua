@@ -4,7 +4,9 @@ local M = {
 }
 
 function M.config()
-  require("various-textobjs").setup { useDefaultKeymaps = false }
+  require("various-textobjs").setup { keymaps = {
+    useDefaults = true,
+  } }
 
   vim.keymap.set({ "o", "x" }, "aw", '<cmd>lua require("various-textobjs").subword("outer")<CR>')
   vim.keymap.set({ "o", "x" }, "iw", '<cmd>lua require("various-textobjs").subword("inner")<CR>')

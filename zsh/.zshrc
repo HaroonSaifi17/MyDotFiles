@@ -19,7 +19,10 @@ alias nv="nvim"
 alias code="nvim"
 alias vim="nvim"
 alias vi="nvim"
+
 bindkey '^L' autosuggest-accept
+bindkey '^j' down-line-or-history
+bindkey '^k' up-line-or-history
 
 
 ts() {
@@ -54,7 +57,20 @@ ts() {
 }
 
 as() {
-  tmux attach -t 0 || tmux new -s 0
+  if [[ -n "$TMUX" ]]; then
+    if tmux has-session -t 0 2>/dev/null; then
+      tmux switch-client -t 0
+    else
+      tmux new-session -s 0
+      tmux switch-client -t 0
+    fi
+  else
+    if tmux has-session -t 0 2>/dev/null; then
+      tmux attach -t 0
+    else
+      tmux new-session -s 0
+    fi
+  fi
 }
 
 home() {
@@ -79,11 +95,6 @@ jk() {
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-source <(ng completion script)
-
 
 # pnpm
 export PNPM_HOME="/home/haroon/.local/share/pnpm"
@@ -95,3 +106,11 @@ esac
 
 
 eval "$(zoxide init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

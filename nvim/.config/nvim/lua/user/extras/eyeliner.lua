@@ -6,6 +6,7 @@ local M = {
 function M.config()
   require("eyeliner").setup {
     highlight_on_key = true,
+    disabled_filetypes = { "alpha" },
   }
 end
 
