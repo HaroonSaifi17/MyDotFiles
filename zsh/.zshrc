@@ -6,7 +6,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export EDITOR=nvim
 export VISUAL=nvim
-export BROWSER="firefox"
+export GTK_THEME=Dracula
+export BROWSER=google-chrome-stable
+export XDG_OPEN=xdg-open
 
 
 ZSH_THEME="powerlevel10k/powerlevel10k" 
@@ -19,6 +21,7 @@ alias nv="nvim"
 alias code="nvim"
 alias vim="nvim"
 alias vi="nvim"
+alias cd="z"
 
 bindkey '^L' autosuggest-accept
 bindkey '^j' down-line-or-history

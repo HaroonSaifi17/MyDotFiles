@@ -22,7 +22,7 @@ M.execs = {
   "lua_ls",
   "yamlls",
   "rust_analyzer",
-  "eslint"
+  -- "eslint"
 }
 
 function M.config()

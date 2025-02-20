@@ -48,7 +48,7 @@ function M.config()
     default_component_configs = {
       indent = {
         indent_size = 2,
-        padding = 2, -- extra padding on left hand side
+        padding = 0, -- extra padding on left hand side
         -- indent guides
         with_markers = true,
         indent_marker = "│",
@@ -107,8 +107,8 @@ function M.config()
       },
     },
     window = {
-      position = "left",
-      width = 35,
+      position = "right",
+      width = 40,
       mappings = {
         ["l"] = "open",
         ["h"] = "close_node",

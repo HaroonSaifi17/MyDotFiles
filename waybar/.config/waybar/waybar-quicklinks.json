@@ -1,17 +1,12 @@
 {
     "custom/quicklink1": {
         "format": "",
-        "on-click": "chromium",
-        "tooltip-format": "Open Chromium"
+        "on-click": "google-chrome-stable",
+        "tooltip-format": "Open Chrome"
     }, 
-    "custom/quicklink2": {
-        "format": "",
-        "on-click": "firefox",
-        "tooltip-format": "Open Firefox"
-    },
     "custom/quicklink3": {
         "format": "",
-        "on-click": "nautilus",
+        "on-click": "nemo",
         "tooltip-format": "Open filemanager"
     }, 
     "custom/quicklink4": {
@@ -25,7 +20,6 @@
         "orientation": "horizontal",
         "modules": [
             "custom/quicklink1",
-            "custom/quicklink2",
             "custom/quicklink3",
             "custom/quicklink4",
             "custom/quicklinkempty"
