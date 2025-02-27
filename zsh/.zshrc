@@ -60,20 +60,34 @@ ts() {
 }
 
 as() {
-  if [[ -n "$TMUX" ]]; then
-    if tmux has-session -t 0 2>/dev/null; then
-      tmux switch-client -t 0
+  current_dir=$(pwd)
+  cd ~
+  selected_dir="~"
+
+  if [[ -n "$selected_dir" ]]; then
+    session_name="0"
+
+    if tmux has-session -t "$session_name" 2>/dev/null; then
+      echo "Session $session_name already exists."
+      
+      if [[ -n "$TMUX" ]]; then
+        tmux switch-client -t "$session_name"
+      else
+        tmux attach-session -t "$session_name"
+      fi
     else
-      tmux new-session -s 0
-      tmux switch-client -t 0
+      echo "Creating new session: $session_name"
+      tmux new-session -d -s "$session_name" -c "$selected_dir"
+      if [[ -n "$TMUX" ]]; then
+        tmux switch-client -t "$session_name"
+      else
+        tmux attach-session -t "$session_name"
+      fi
     fi
   else
-    if tmux has-session -t 0 2>/dev/null; then
-      tmux attach -t 0
-    else
-      tmux new-session -s 0
-    fi
+    echo "No directory selected."
   fi
+  cd "$current_dir"
 }
 
 home() {

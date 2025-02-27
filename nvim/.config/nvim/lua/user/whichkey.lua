@@ -40,7 +40,7 @@ function M.config()
       filetypes = { "TelescopePrompt" },
     },
     defer = function(ctx)
-        return ctx.mode == "v" or ctx.mode == "<C-V>"
+        return ctx.mode == "v" or ctx.mode == "V"
       end,
   }
 
