@@ -130,7 +130,7 @@ function M.config()
     "eslint",
     -- "rust_analyzer",
     "graphql",
-    "grammarly",
+    -- "grammarly",
   }
 
   vim.diagnostic.config {

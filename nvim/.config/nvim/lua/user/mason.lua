@@ -7,7 +7,7 @@ local M = {
 }
 
 M.execs = {
-  "grammarly",
+  -- "grammarly",
   "marksman",
   "bashls",
   "angularls",
