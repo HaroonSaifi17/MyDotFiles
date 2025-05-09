@@ -7,3 +7,6 @@ vim.diagnostic.config({
     border = "rounded",
   },
 })
+
+vim.opt.swapfile = false
+vim.opt.colorcolumn = "100"

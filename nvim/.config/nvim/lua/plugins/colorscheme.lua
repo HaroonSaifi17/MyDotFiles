@@ -1,18 +1,24 @@
 return {
   {
-    "ChrlistianChiarulli/defaultplus",
-    config = function()
-      vim.cmd.colorscheme("defaultplus")
-      vim.api.nvim_set_hl(0, "SnacksIndent", { fg = "#333333", nocombine = true })
-      vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#333333", nocombine = true })
-      vim.api.nvim_set_hl(0, "BlinkCmpScrollBarThumb", { bg = "#444444", nocombine = true })
-      vim.api.nvim_set_hl(0, "BlinkCmpGhostText", { fg = "#999999", nocombine = true })
-    end,
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
   },
   {
-    "decaycs/decay.nvim",
-  },
-  {
-    "rebelot/kanagawa.nvim",
+    "catppuccin",
+    opts = {
+      transparent_background = true,
+      flavor = "mocha",
+      custom_highlights = function(colors)
+        return {
+          SnacksIndentScope = { fg = "#6c7086", nocombine = true },
+          SnacksIndent = { fg = "#222222", nocombine = true },
+          BlinkCmpMenuBorder = { bg = "NONE", fg = "#6c7086", nocombine = true },
+          BlinkCmpMenu = { bg = "NONE", nocombine = true },
+          BlinkCmpGhostText = { bg = "#2a2b3d", fg = "#6c7086", nocombine = true },
+        }
+      end,
+    },
   },
 }

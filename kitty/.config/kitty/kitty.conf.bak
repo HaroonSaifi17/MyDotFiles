@@ -1,0 +1,14 @@
+font_size 14
+
+placement_strategy center
+background_opacity 0.6
+
+font_family      family="MesloLGM Nerd Font Mono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+
+cursor_shape beam
+cursor none
+
+map ctrl+f launch --cwd=current --type=overlay ~/tmux-sessionizer
