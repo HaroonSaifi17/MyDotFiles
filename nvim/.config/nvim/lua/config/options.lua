@@ -9,4 +9,4 @@ vim.diagnostic.config({
 })
 
 vim.opt.swapfile = false
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "80"
