@@ -10,3 +10,9 @@ vim.diagnostic.config({
 
 vim.opt.swapfile = false
 vim.opt.colorcolumn = "80"
+
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  },
+})
