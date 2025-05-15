@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "rose-pine-moon",
     },
   },
 
@@ -18,6 +18,7 @@ return {
           BlinkCmpMenuBorder = { bg = "NONE", fg = "#6c7086", nocombine = true },
           BlinkCmpMenu = { bg = "NONE", nocombine = true },
           BlinkCmpGhostText = { bg = "#2a2b3d", fg = "#6c7086", nocombine = true },
+          TreesitterContext = { bg = "#2a2b3d", nocombine = true },
         }
       end,
     },
@@ -36,6 +37,7 @@ return {
         BlinkCmpMenuBorder = { bg = "NONE", fg = "#6c7086", nocombine = true },
         BlinkCmpMenu = { bg = "NONE", nocombine = true },
         BlinkCmpGhostText = { bg = "#2a2b3d", fg = "#6c7086", nocombine = true },
+        TreesitterContext = { bg = "#2a2b3d", nocombine = true },
       },
     },
   },
@@ -51,6 +53,7 @@ return {
           BlinkCmpMenuBorder = { bg = "NONE", fg = "#6c7086", nocombine = true },
           BlinkCmpMenu = { bg = "NONE", nocombine = true },
           BlinkCmpGhostText = { bg = "#2a2b3d", fg = "#6c7086", nocombine = true },
+          TreesitterContext = { bg = "#2a2b3d", nocombine = true },
         }
       end,
     },
