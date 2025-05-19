@@ -27,5 +27,5 @@ map("n", "<A-u>", ":m .-2<CR>==", { noremap = true, silent = true, desc = "Move 
 map("v", "<A-d>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection down" })
 map("v", "<A-u>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection up" })
 
-map({ "n", "v", "o" }, "<A-j>", "<C-d>zz", { noremap = true, silent = true, desc = "Page Down (half) & center" })
-map({ "n", "v", "o" }, "<A-k>", "<C-u>zz", { noremap = true, silent = true, desc = "Page Up (half) & center" })
+map({ "n", "v", "o" }, "<A-j>", "<C-d>", { noremap = true, silent = true, desc = "Page Down (half) & center" })
+map({ "n", "v", "o" }, "<A-k>", "<C-u>", { noremap = true, silent = true, desc = "Page Up (half) & center" })

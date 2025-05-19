@@ -1,14 +1,20 @@
 font_size 14
 
 placement_strategy center
-background_opacity 0.6
+background_opacity 0.85
 
-font_family      family="MesloLGM Nerd Font Mono"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
+font_family JetBrainsMono NF
+bold_font JetBrainsMono NF Bold
+italic_font JetBrainsMono NF Italic
+bold_italic_font JetBrainsMono NF Bold Italic
 
 cursor_shape beam
-cursor none
+# cursor none
 
 map ctrl+f launch --cwd=current --type=overlay ~/tmux-sessionizer
+
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Macchiato
+include current-theme.conf
+# END_KITTY_THEME
