@@ -18,6 +18,9 @@ return {
           border = "rounded",
         },
       },
+      ghost_text = {
+        enabled = false,
+      },
     },
   },
 }

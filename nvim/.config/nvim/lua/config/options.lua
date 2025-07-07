@@ -10,6 +10,7 @@ vim.diagnostic.config({
 
 vim.opt.swapfile = false
 vim.opt.colorcolumn = "80"
+vim.g.ai_cmp = false
 
 vim.filetype.add({
   extension = {
