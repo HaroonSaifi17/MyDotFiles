@@ -23,10 +23,12 @@ alias vim="nvim"
 alias vi="nvim"
 alias cd="z"
 
-bindkey '^L' autosuggest-accept
-bindkey '^j' down-line-or-history
-bindkey '^k' up-line-or-history
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
 
+bindkey '^k' up-line-or-beginning-search
+bindkey '^j' down-line-or-beginning-search
+bindkey '^l' autosuggest-accept
 # bindkey -s ^f "tmux-sessionizer\n"
 
 home() {
