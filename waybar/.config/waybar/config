@@ -1,24 +1,41 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-center": ["hyprland/workspaces"],
-  "modules-left": ["clock"],
+  "modules-center": ["clock"],
+  "modules-left": ["hyprland/workspaces", "network","custom/lowbattery"],
   "modules-right": [
     "pulseaudio",
     "backlight",
     "battery",
-    "network",
     "cpu",
     "memory",
     "tray",
-    "custom/lock",
+    "custom/lock"
   ],
-  "hyprland/workspaces": {
-    "format": "{name}: {icon}",
+  "custom/lowbattery": {
+    "exec": "BAT=$(cat /sys/class/power_supply/BAT*/capacity); [ \"$BAT\" -le 50 ] && echo ' LOW' || echo ''",
+    "interval": 60,
+    "tooltip": false
+  },
+  "backlight": {
+    "format": "󰃟 {percent}%",
     "format-icons": {
-      "active": "",
-      "default": ""
-    }
+      "default": ["󰃟", "󰃠", "󰃡"]
+    },
+    "interval": 5,
+    "tooltip": false
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": {
+      "default": ["󰂃", "󰂄", "󰂅"]
+    },
+    "interval": 5,
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "active-only": true
   },
   "tray": {
     "icon-size": 18,
@@ -37,16 +54,18 @@
     "timezone": "India/Kolkata",
     "format": "{:%I:%M - %a}"
   },
+
   "network": {
-    "format-wifi": "󰤢 {essid}",
+    "format-wifi": "󰤢 {essid} {bandwidthUpBytes:>5} {bandwidthDownBytes:>5}",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰤠",
-    "interval": 5,
+    "interval": 1,
     "tooltip": false
   },
+
   "cpu": {
     "interval": 1,
-    "format": " {usage:>2}%",
+    "format": " {usage:>2}%"
   },
   "memory": {
     "interval": 30,
@@ -66,4 +85,3 @@
     "format": ""
   }
 }
-
