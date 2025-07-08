@@ -13,7 +13,7 @@
     "custom/lock"
   ],
   "custom/lowbattery": {
-    "exec": "BAT=$(cat /sys/class/power_supply/BAT*/capacity); [ \"$BAT\" -le 50 ] && echo ' LOW' || echo ''",
+    "exec": "BAT=$(cat /sys/class/power_supply/BAT*/capacity); [ \"$BAT\" -le 10 ] && echo ' LOW' || echo ''",
     "interval": 60,
     "tooltip": false
   },
