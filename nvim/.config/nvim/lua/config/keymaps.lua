@@ -29,3 +29,5 @@ map("v", "<A-u>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "M
 
 map({ "n", "v", "o" }, "<A-j>", "<C-d>", { noremap = true, silent = true, desc = "Page Down (half) & center" })
 map({ "n", "v", "o" }, "<A-k>", "<C-u>", { noremap = true, silent = true, desc = "Page Up (half) & center" })
+
+map("n", "Q", "<cmd>bdelete<cr>", { desc = "Close buffer" })
