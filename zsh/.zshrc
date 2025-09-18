@@ -62,6 +62,8 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+export PATH="$HOME/bin:$PATH"
+
 
 eval "$(zoxide init zsh)"
 

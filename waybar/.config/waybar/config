@@ -56,7 +56,7 @@
   },
 
   "network": {
-    "format-wifi": "󰤢 {essid} {bandwidthUpBytes:>5} {bandwidthDownBytes:>5}",
+    "format-wifi": "󰤢 {essid} {bandwidthUpBytes:>6}  {bandwidthDownBytes:>6} ",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰤠",
     "interval": 1,
